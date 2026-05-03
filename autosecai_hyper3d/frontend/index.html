@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoSecAI // HYPER 3D MODE</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <canvas id="hyper-scene" aria-hidden="true"></canvas>
+    <div id="rgb-noise" aria-hidden="true"></div>
+    <div id="scroll-space" aria-hidden="true"></div>
+
+    <main class="interface-shell">
+      <section class="hero-strip" aria-label="AutoSecAI scanner">
+        <div class="brand-block">
+          <p class="eyebrow">OWASP // CODE INTELLIGENCE // DEVSECOPS</p>
+          <h1 class="glitch-title" data-text="AutoSecAI">AutoSecAI</h1>
+          <p class="system-subtitle">HYPER 3D MODE vulnerability analysis engine</p>
+        </div>
+
+        <aside class="scan-status" aria-live="polite">
+          <span class="pulse-dot"></span>
+          <span id="statusText">System idle</span>
+        </aside>
+      </section>
+
+      <section class="workstation" aria-label="Interactive scanner workstation">
+        <div class="panel editor-panel">
+          <div class="panel-topline">
+            <div>
+              <p class="panel-kicker">INPUT BUFFER</p>
+              <h2>Code Console</h2>
+            </div>
+            <div class="button-row">
+              <button id="sampleBtn" class="icon-button secondary" type="button" title="Reload vulnerable sample">
+                <i data-lucide="file-code-2"></i>
+                <span>Sample</span>
+              </button>
+              <button id="scanBtn" class="icon-button primary" type="button" title="Run vulnerability scan">
+                <i data-lucide="radar"></i>
+                <span>Scan</span>
+              </button>
+            </div>
+          </div>
+          <div id="editor" aria-label="Monaco code editor"></div>
+        </div>
+
+        <div class="panel results-panel">
+          <div class="panel-topline">
+            <div>
+              <p class="panel-kicker">THREAT OUTPUT</p>
+              <h2>Findings</h2>
+            </div>
+            <div class="score-ring" aria-label="Risk score">
+              <span id="riskScore">00</span>
+              <small>risk</small>
+            </div>
+          </div>
+
+          <div class="metrics-grid" aria-label="Scan summary">
+            <div>
+              <strong id="issueCount">0</strong>
+              <span>issues</span>
+            </div>
+            <div>
+              <strong id="highCount">0</strong>
+              <span>high+</span>
+            </div>
+            <div>
+              <strong id="scanTime">0ms</strong>
+              <span>latency</span>
+            </div>
+          </div>
+
+          <div id="results" class="results-list" aria-live="polite">
+            <div class="empty-state">
+              <span class="empty-glyph">ASEC</span>
+              <p>Load code and ignite the scan sequence.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="hud" aria-label="Runtime diagnostics">
+      <div><span>FPS</span><strong id="hudFps">000</strong></div>
+      <div><span>VEL</span><strong id="hudVelocity">0.00</strong></div>
+      <div><span>CAM</span><strong id="hudCamera">0,0,0</strong></div>
+      <div><span>ISSUES</span><strong id="hudIssues">00</strong></div>
+    </aside>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+
